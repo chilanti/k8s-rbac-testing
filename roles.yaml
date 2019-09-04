@@ -4,7 +4,7 @@ metadata:
   name: $NAMESPACE-user-full-access
   namespace: $NAMESPACE
 rules:
-- apiGroups: ["", "extensions", "apps", "autoscaling"]
+- apiGroups: ["", "extensions", "apps", "autoscaling", "appsody.dev"]
   resources: ["*"]
   verbs: ["*"]
 - apiGroups: ["batch"]

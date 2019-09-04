@@ -3,9 +3,12 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: $NAMESPACE-user-node-readonly-access
 rules:
-- apiGroups: [""]
-  resources: ["nodes"]
+- apiGroups: ["", "apps", "autoscaling", "extensions"]
+  resources: ["*"]
   verbs: ["get", "watch", "list"]
+- apiGroups: ["apiextensions.k8s.io"]
+  resources: ["customresourcedefinitions"]
+  verbs: ["*"]
 ---
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
